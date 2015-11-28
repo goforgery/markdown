@@ -9,15 +9,23 @@ Simple markdown renderer and caching package for Forgery2 based on [blackfriday]
 
 ## Use
 
-    package main
+```javascript
+package main
 
-    import(
-        "fmt"
-        "github.com/goforgery/markdown"
-    )
+import (
+    "github.com/goforgery/forgery2"
+    "github.com/goforgery/markdown"
+)
 
-    func init() {
-        html := markdown.Render("./text.md")
-        fmt.Println(html)
-        markdown.Clean()
-    }
+func main() {
+    app := f.CreateApp()
+    app.Get("/", func(req *f.Request, res *f.Response, next func()) {
+        res.End(markdown.Render("./text.md"))
+    })
+    app.Listen(3000)
+}
+```
+
+## Test
+
+    go test
