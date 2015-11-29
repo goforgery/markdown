@@ -1,5 +1,7 @@
 # markdown
 
+[![Build Status](https://secure.travis-ci.org/goforgery/markdown.png?branch=master)](http://travis-ci.org/goforgery/markdown)
+
 Simple markdown renderer and caching package for Forgery2 based on [blackfriday](http://github.com/russross/blackfriday).
 
 * `.Render()` Function that renders the given filename as markdown.
